@@ -1,0 +1,19 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["reactNative"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./app.db"
+}
+
+model Expanse {
+  id                   Int     @id @default(autoincrement())
+  name                 String
+  obs                  String?
+  value                Float
+  quantityInstallments Int     @default(0)
+  installmentsPaid     Int     @default(0)
+  installmentsToPaid   Int     @default(0)
+}
